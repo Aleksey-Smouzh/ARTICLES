@@ -1,3 +1,18 @@
+@media  (max-width: 815px){
+    #title_articl{
+        width: 665px;
+    } 
+}
+@media  (max-width: 710px){
+    #title_articl{
+        width: 565px;
+        } 
+    }
+@media  (max-width: 610px){
+    #title_articl{
+        width: 465px;
+    } 
+}
 @media  (max-width: 518px){
     #title_articl{
         width: 465px;
@@ -32,4 +47,4 @@
     #title_articl{
         width: 320px;
     } 
-} 
+}
