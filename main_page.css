@@ -152,8 +152,8 @@ border: 1px solid rgba(11, 20, 242, 0.88);
 #title_articl{
     width: 474px;
     height: 58px;
-    left: calc(50% - 474px/2 + 1.5px);
-    top: 177px;
+    /* left: calc(50% - 474px/2 + 1.5px);
+    top: 177px; */
     border: 3px solid #EF2A82;
     background: #FFFFFF;
     box-shadow: -5px 8px 4px -1px rgba(0, 0, 0, 0.25);

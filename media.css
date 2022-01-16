@@ -1,0 +1,35 @@
+@media  (max-width: 518px){
+    #title_articl{
+        width: 465px;
+    } 
+}
+ @media  (max-width: 505px){
+    #title_articl{
+        width: 445px;
+    } 
+} 
+@media  (max-width: 485px){
+    #title_articl{
+        width: 415px;
+    } 
+} 
+@media  (max-width: 445px){
+    #title_articl{
+        width: 375px;
+    } 
+} 
+@media  (max-width: 391px){
+    #title_articl{
+        width: 345px;
+    } 
+} 
+@media  (max-width: 375px){
+    #title_articl{
+        width: 340px;
+    } 
+} 
+@media  (max-width: 360px){
+    #title_articl{
+        width: 320px;
+    } 
+} 
