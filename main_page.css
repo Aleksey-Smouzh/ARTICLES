@@ -1,0 +1,108 @@
+body {
+    width: 1441px;
+    height: 1024px;
+    
+    background: #172755;  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.title_container{
+    display: grid;
+}
+.main_title{
+    
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-decoration-line: underline;
+    
+    color: #FFFFFF;
+    
+    border: 1px solid #0B14F2;
+    text-shadow: -5px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);  
+}
+.title_block_data{
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    border: 1px solid rgba(11, 20, 242, 0.88);
+}
+.title_block_deadline{
+font-weight: 500;
+font-size: 15px;
+line-height: 18px;
+letter-spacing: 0.03em;
+color: #FFFFFF;
+border: 1px solid rgba(11, 20, 242, 0.88);
+}
+.title_block_status{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    border: 1px solid rgba(11, 20, 242, 0.88);  
+}
+.title_block_articl{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    border: 1px solid rgba(11, 20, 242, 0.88); 
+}
+.title_block_loading_text{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    
+    letter-spacing: 0.03em;
+    
+    color: #FFFFFF;
+    
+    border: 1px solid #0B14F2; 
+}
+.title_block_loading_foto{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    border: 1px solid rgba(11, 20, 242, 0.88);  
+}
+.title_block_send{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    border: 1px solid rgba(11, 20, 242, 0.88); 
+}
+#date_of, #deadline, #status, #text, #foto, #send{
+    left: calc(50% - 110px/2 - 545.5px);
+    top: 177px;
+    width: 110px;
+    height: 58px;
+    background: #FFFFFF;
+    border: 3px solid #EF2A82;
+    box-shadow: -5px 8px 4px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+#title_articl{
+    width: 474px;
+    height: 58px;
+    left: calc(50% - 474px/2 + 1.5px);
+    top: 177px;
+    border: 3px solid #EF2A82;
+    background: #FFFFFF;
+    box-shadow: -5px 8px 4px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 5px; 
+}
