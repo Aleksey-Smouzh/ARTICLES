@@ -5,9 +5,9 @@ const getResourse = async (url) => {
   }
   return await response.json();
 };
- const data = getResourse(
-   "https://61d496de8df81200178a8d99.mockapi.io/api/v1/user"
- ).then((data) => console.log(data));
+const data = getResourse(
+  "https://61d496de8df81200178a8d99.mockapi.io/api/v1/user"
+).then((data) => console.log(data));
 
 let addMessageDate = document.querySelector("#date_of"),
   addMessageDeadline = document.querySelector("#deadline"),
@@ -20,28 +20,37 @@ let addMessageDate = document.querySelector("#date_of"),
 
 let todoList = [];
 
-addButton.addEventListener('click', function () {
+if (localStorage.getItem("todo")) {
+  todoList = JSON.parse(localStorage.getItem("todo"));
+  displayMessages();
+}
+
+addButton.addEventListener("click", function () {
   let newTodo = {
     todoData: addMessageDate.value,
     todoDeadline: addMessageDeadline.value,
     todoTitle: addMessageTitle.value,
     todoLoadText: addMessageLoadText.value,
     todoLoadFoto: addMessageLoadFoto.value,
-    checked: false
+    checked: false,
   };
 
   todoList.push(newTodo);
   displayMessages();
-  localStorage.setItem('todo', JSON.stringify(todoList));
+  localStorage.setItem("todo", JSON.stringify(todoList));
 });
 function displayMessages() {
   let displayMessage = "";
 
-  todoList.forEach(function(item, i) {
+  todoList.forEach(function (item, i) {
     displayMessage += `
     <li>
-    <input type='checkbox' id='item_${i}' ${item.checked ? "checked" : ""}>
-    <label for='item_${i}'>${item.todoData}<br> ${item.todoDeadline}, ${item.todoTitle} ${item.todoLoadText}, ${item.todoLoadFoto}</label>
+    <input type='checkbox' id='item_${i}' ${item.checked ? "checked" : " "}>
+    <label for='item_${i}'>${item.todoData},&nbsp
+    ${item.todoDeadline},&nbsp
+    ${item.todoTitle},&nbsp
+    ${item.todoLoadText},&nbsp
+    ${item.todoLoadFoto}</label>
     </li>
     `;
     todo.innerHTML = displayMessage;
@@ -49,3 +58,15 @@ function displayMessages() {
     console.log(todoList, displayMessage);
   });
 }
+todo.addEventListener("change", function(event){
+  let idInput = event.target.getAttribute("id");
+  let forLabel = todo.querySelector("[for=" + idInput + "]");
+  let valueLabel = forLabel.innerHTML;
+
+  todoList.forEach(function(item){
+    if (item.todo === valueLabel){
+      item.checked = !item.checked;
+      localStorage.setItem("todo", JSON.stringify(todoList));
+    }
+  });
+});
