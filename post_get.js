@@ -26,6 +26,7 @@ if (localStorage.getItem("todo")) {
 }
 
 addButton.addEventListener("click", function () {
+  
   let newTodo = {
     todoData: addMessageDate.value,
     todoDeadline: addMessageDeadline.value,
@@ -38,15 +39,18 @@ addButton.addEventListener("click", function () {
   todoList.push(newTodo);
   displayMessages();
   localStorage.setItem("todo", JSON.stringify(todoList));
-});
+ });
 function displayMessages() {
   let displayMessage = "";
 
+  if(todoList.length === 0) todo.innerHTML = ' ';
   todoList.forEach(function (item, i) {
     displayMessage += `
     <li>
     <input type='checkbox' id='item_${i}' ${item.checked ? "checked" : " "}>
-    <label for='item_${i}'>${item.todoData},&nbsp
+    <label for='item_${i}' class="${item.important ? "important" : ""}" >${
+      item.todoData
+    },&nbsp
     ${item.todoDeadline},&nbsp
     ${item.todoTitle},&nbsp
     ${item.todoLoadText},&nbsp
@@ -58,14 +62,30 @@ function displayMessages() {
     console.log(todoList, displayMessage);
   });
 }
-todo.addEventListener("change", function(event){
+todo.addEventListener("change", function (event) {
   let idInput = event.target.getAttribute("id");
   let forLabel = todo.querySelector("[for=" + idInput + "]");
   let valueLabel = forLabel.innerHTML;
 
-  todoList.forEach(function(item){
-    if (item.todo === valueLabel){
+  todoList.forEach(function (item) {
+    if (item.todo === valueLabel) {
       item.checked = !item.checked;
+      localStorage.setItem("todo", JSON.stringify(todoList));
+    }
+  });
+});
+
+todo.addEventListener("contextmenu", function (event) {
+  event.preventDefault();
+  todoList.forEach(function (item, i) {
+    if (item.todo === event.target.innerHTML) {
+      if (event.ctrlKey || event.metaKey) {
+        todoList.splice(i, 1);
+      } else {
+        item.important = !item.important;
+      }
+
+      displayMessages();
       localStorage.setItem("todo", JSON.stringify(todoList));
     }
   });
