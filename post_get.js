@@ -5,9 +5,9 @@ const getResourse = async (url) => {
   }
   return await response.json();
 };
-// const data = getResourse(
-//   "https://61d496de8df81200178a8d99.mockapi.io/api/v1/user"
-// ).then((data) => console.log(data));
+ const data = getResourse(
+   "https://61d496de8df81200178a8d99.mockapi.io/api/v1/user"
+ ).then((data) => console.log(data));
 
 let addMessageDate = document.querySelector("#date_of"),
   addMessageDeadline = document.querySelector("#deadline"),
@@ -20,14 +20,14 @@ let addMessageDate = document.querySelector("#date_of"),
 
 let todoList = [];
 
-addButton.addEventListener("click", function () {
+addButton.addEventListener('click', function () {
   let newTodo = {
     todoData: addMessageDate.value,
     todoDeadline: addMessageDeadline.value,
     todoTitle: addMessageTitle.value,
     todoLoadText: addMessageLoadText.value,
     todoLoadFoto: addMessageLoadFoto.value,
-    checked: false,
+    checked: false
   };
 
   todoList.push(newTodo);
@@ -41,11 +41,11 @@ function displayMessages() {
     displayMessage += `
     <li>
     <input type='checkbox' id='item_${i}' ${item.checked ? "checked" : ""}>
-    <label for='item_${i}'>${item.todo}</label>
+    <label for='item_${i}'>${item.todoData}<br> ${item.todoDeadline}, ${item.todoTitle} ${item.todoLoadText}, ${item.todoLoadFoto}</label>
     </li>
     `;
     todo.innerHTML = displayMessage;
 
-    console.log("newTodo: ", displayMessage);
+    console.log(todoList, displayMessage);
   });
 }

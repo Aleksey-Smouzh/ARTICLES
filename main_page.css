@@ -157,3 +157,8 @@ body {
   box-shadow: -5px 8px 4px -1px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 }
+#todo{
+  color: #ffffff;
+  border: 3px solid #ef2a82;
+
+}
