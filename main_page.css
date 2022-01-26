@@ -15,6 +15,18 @@ body {
   flex-direction: column;
 }
 
+#exit {
+  display:flex;
+  color: #f1ecee;
+  font-size: 30px;
+  cursor: pointer;
+  width: 68px;
+  height: 39px;
+  
+  text-decoration: none;
+  border: 3px solid #ef2a82;
+  border-radius: 5px;
+}
 /* label{
   color: #ef2a82;
   font-weight: bold;
@@ -38,7 +50,8 @@ body {
 .status,
 .articl,
 .load_text,
-.load_foto {
+.load_foto 
+{
   display: flex;
 }
 
@@ -131,7 +144,9 @@ body {
 #deadline,
 #status,
 #text,
-#foto {
+#foto
+
+{
   width: 110px;
   height: 58px;
   background: #ffffff;
@@ -140,6 +155,7 @@ body {
   border-radius: 5px;
   font-size: 13px;
 }
+
 
 #send {
   width: 64px;
